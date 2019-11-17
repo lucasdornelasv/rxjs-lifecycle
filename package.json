@@ -2,17 +2,29 @@
   "name": "rxjs-lifecycle",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Lucas Dornelas",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^3.7.2"
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
   },
-  "dependencies": {
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "^.+\\.spec\\.ts$"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2",
     "rxjs": "^6.5.3"
   }
 }

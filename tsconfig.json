@@ -1,20 +1,22 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"baseUrl": "./",
-		"outDir": "./dist",
-		"sourceMap": true,
-		"declaration": true,
-		"strict": true,
-		"module": "commonjs",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"importHelpers": true,
-		"target": "es2015",
-		"typeRoots": ["node_modules/@types"],
-		"lib": ["es2018", "dom"],
-		"paths": {
-			"rxjs-lifecycle": ["dist/"]
-		}
-	}
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist",
+        "sourceMap": true,
+        "declaration": true,
+        "strict": true,
+        "module": "commonjs",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2018", "dom"],
+        "paths": {
+            "rxjs-lifecycle": ["dist/"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.spec.*"]
 }
