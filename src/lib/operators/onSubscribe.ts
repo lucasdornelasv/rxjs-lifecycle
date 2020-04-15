@@ -3,8 +3,8 @@ import {
   Subscriber,
   TeardownLogic,
   Observable,
-  MonoTypeOperatorFunction,
-  Subscription
+  OperatorFunction,
+  Subscription,
 } from 'rxjs';
 
 class OnSubscribeSubscriber<T, E> extends Subscriber<T> {
@@ -29,7 +29,7 @@ class OnSubscribeOperator<T, E> implements Operator<T, T> {
 
 export function onSubscribe<T>(
   consumer: (subscription: Subscription) => void
-): MonoTypeOperatorFunction<T> {
+): OperatorFunction<T, T> {
   return (source: Observable<T>) =>
     source.lift(new OnSubscribeOperator(consumer));
 }

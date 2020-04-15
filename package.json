@@ -1,6 +1,6 @@
 {
   "name": "@rxjs-lifecycle/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "author": "Lucas Dornelas",
   "license": "ISC",
@@ -27,13 +27,13 @@
     "testRegex": "^.+\\.spec\\.ts$"
   },
   "dependencies": {
-    "rxjs": "6.5.4"
+    "rxjs": "6.5.5"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "jest": "^24.9.0",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.7.2"
+    "typescript": "3.8.3"
   }
 }
