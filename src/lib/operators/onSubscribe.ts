@@ -7,7 +7,7 @@ import {
   Subscription,
 } from 'rxjs';
 
-class OnSubscribeSubscriber<T, E> extends Subscriber<T> {
+class OnSubscribeSubscriber<T> extends Subscriber<T> {
   constructor(
     destination: Subscriber<T>,
     consumer: (subscription: Subscription) => void
@@ -17,7 +17,7 @@ class OnSubscribeSubscriber<T, E> extends Subscriber<T> {
   }
 }
 
-class OnSubscribeOperator<T, E> implements Operator<T, T> {
+class OnSubscribeOperator<T> implements Operator<T, T> {
   constructor(private consumer: (subscription: Subscription) => void) {}
 
   call(subscriber: Subscriber<T>, source: any): TeardownLogic {
