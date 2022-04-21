@@ -1,0 +1,1 @@
+export type EventMappingHandler<E> = (event: E) => E;
