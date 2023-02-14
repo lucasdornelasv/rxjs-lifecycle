@@ -1,5 +1,17 @@
-import { BehaviorSubject, combineLatest, Observable, Subject } from "rxjs";
-import { catchError, filter, first, map, share, skip, take, takeUntil } from "rxjs/operators";
+import {
+	BehaviorSubject,
+	combineLatest,
+	Observable,
+	Subject,
+	catchError,
+	filter,
+	first,
+	map,
+	share,
+	skip,
+	take,
+	takeUntil,
+} from "rxjs";
 import { EventMappingHandler } from "./EventMappingHandler";
 import { Functions } from "./Functions";
 import { ILifecycleProvider } from "./ILifecycleProvider";
@@ -29,7 +41,7 @@ export class RxLifecycle<R> implements ILifecycleProvider<R> {
 		return takeUntil(observable);
 	}
 
-	private static takeUntilEvent<E>(lifecycle: Observable<E>, event: E) {
+	private static takeUntilEvent<E>(lifecycle: Observable<E>, event: E): Observable<E> {
 		return lifecycle.pipe(first((lifecycleEvent) => lifecycleEvent === event));
 	}
 
@@ -37,10 +49,10 @@ export class RxLifecycle<R> implements ILifecycleProvider<R> {
 		lifecycle: Observable<E>,
 		correspondingEvents: EventMappingHandler<E>
 	) {
-		return combineLatest(
+		return combineLatest([
 			lifecycle.pipe(take(1), map(correspondingEvents)),
-			lifecycle.pipe(skip(1))
-		).pipe(
+			lifecycle.pipe(skip(1)),
+		]).pipe(
 			map(([bindUntilEvent, lifecycleEvent]) => {
 				return bindUntilEvent === lifecycleEvent;
 			}),

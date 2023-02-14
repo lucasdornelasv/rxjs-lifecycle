@@ -10,7 +10,7 @@ enum TestLifecycleEvent {
 	Destroy,
 }
 
-const eventHandler: EventMappingHandler<TestLifecycleEvent> = (event) => {
+const eventHandler: EventMappingHandler<TestLifecycleEvent> = (event): any => {
 	switch (event) {
 		case TestLifecycleEvent.Create:
 			return TestLifecycleEvent.Destroy;
